@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ASMT</string>
+    <string name="hello_nepal">Hello Nepal</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="enter_your_phone">Enter your phone</string>
+    <string name="enter_your_message">Enter your message</string>
+    <string name="submit">Submit</string>
+    <string name="this_field_is_required">This field is required</string>
+    <string name="invalid_email">Invalid email</string>
+    <string name="invalid_phone">Invalid phone</string>
+</resources>
