@@ -70,8 +70,10 @@ public class MainActivity extends AppCompatActivity {
         if(name.isEmpty()){
             nameInputLayout.setError(getString(R.string.this_field_is_required));
             nameInputLayout.setErrorEnabled(true);
+            nameET.requestFocus();
             return false;
         }
+        nameInputLayout.setError(null);
         nameInputLayout.setErrorEnabled(false);
         return true;
     }
@@ -80,12 +82,15 @@ public class MainActivity extends AppCompatActivity {
         if(email.isEmpty()){
             emailInputLayout.setError(getString(R.string.this_field_is_required));
             emailInputLayout.setErrorEnabled(true);
+            emailET.requestFocus();
             return false;
         }else if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             emailInputLayout.setError(getString(R.string.invalid_email));
             emailInputLayout.setErrorEnabled(true);
+            emailET.requestFocus();
             return false;
         }
+        emailInputLayout.setError(null);
         emailInputLayout.setErrorEnabled(false);
         return true;
     }
@@ -94,12 +99,15 @@ public class MainActivity extends AppCompatActivity {
         if(phone.isEmpty()){
             phoneInputLayout.setError(getString(R.string.this_field_is_required));
             phoneInputLayout.setEnabled(true);
+            phoneET.requestFocus();
             return false;
         }else if(!Patterns.PHONE.matcher(phone).matches()){
             phoneET.setError(getString(R.string.invalid_phone));
             phoneInputLayout.setEnabled(true);
+            phoneET.requestFocus();
             return false;
         }
+        phoneInputLayout.setError(null);
         phoneInputLayout.setEnabled(false);
         return true;
     }
@@ -108,8 +116,10 @@ public class MainActivity extends AppCompatActivity {
         if(message.isEmpty()){
             messageInputLayout.setError(getString(R.string.this_field_is_required));
             messageInputLayout.setEnabled(true);
+            messageET.requestFocus();
             return false;
         }
+        messageInputLayout.setError(null);
         messageInputLayout.setErrorEnabled(false);
         return true;
     }
@@ -121,6 +131,7 @@ public class MainActivity extends AppCompatActivity {
         message = messageET.getText().toString();
 
         if(!validateName(name)) return;
+        if(!validateEmail(email)) return;
         if(!validatePhone(phone)) return;
         if(!validateGender()) return;
         if(!validateMessage(message)) return;
