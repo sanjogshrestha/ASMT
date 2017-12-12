@@ -9,4 +9,8 @@
     <string name="this_field_is_required">This field is required</string>
     <string name="invalid_email">Invalid email</string>
     <string name="invalid_phone">Invalid phone</string>
+    <string name="male">Male</string>
+    <string name="female">female</string>
+    <string name="gender">Gender</string>
+    <string name="please_select_gender">Please select gender</string>
 </resources>
