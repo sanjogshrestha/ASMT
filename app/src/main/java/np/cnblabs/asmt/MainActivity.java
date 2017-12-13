@@ -1,5 +1,6 @@
 package np.cnblabs.asmt;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -130,11 +131,13 @@ public class MainActivity extends AppCompatActivity {
         phone = phoneET.getText().toString();
         message = messageET.getText().toString();
 
-        if(!validateName(name)) return;
+       /* if(!validateName(name)) return;
         if(!validateEmail(email)) return;
         if(!validatePhone(phone)) return;
         if(!validateGender()) return;
-        if(!validateMessage(message)) return;
+        if(!validateMessage(message)) return;*/
+
+        startActivity(new Intent(MainActivity.this, DashboardActivity.class));
 
         System.out.println("name="+ name + " email="+ email + " phone = " + phone + " message = " +  message + " gender = " + gender);
     }

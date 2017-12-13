@@ -13,4 +13,8 @@
     <string name="female">female</string>
     <string name="gender">Gender</string>
     <string name="please_select_gender">Please select gender</string>
+    <string name="spinner">Spinner</string>
+    <string name="listView">ListView</string>
+    <string name="dashboard">Dashboard</string>
+
 </resources>
