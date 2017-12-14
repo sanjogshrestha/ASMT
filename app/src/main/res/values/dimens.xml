@@ -3,4 +3,5 @@
     <dimen name="padding5">5dp</dimen>
     <dimen name="font20">20sp</dimen>
     <dimen name="dimen16">16dp</dimen>
+    <dimen name="dimen80">80dp</dimen>
 </resources>

@@ -27,6 +27,10 @@
             android:name=".SpinnerActivity"
             android:label="@string/spinner"
             android:parentActivityName=".DashboardActivity"/>
+
+        <activity android:name=".ListViewActivity"
+            android:label="@string/listview"
+            android:parentActivityName=".DashboardActivity"/>
     </application>
 
 </manifest>

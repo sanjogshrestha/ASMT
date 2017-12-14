@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 public class SpinnerActivity extends AppCompatActivity {
     Spinner spinner;
+    public static String[] list = {"asmt", "gongabu", "ktm", "bagmati", "nep"};
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -25,7 +26,6 @@ public class SpinnerActivity extends AppCompatActivity {
 
         spinner = findViewById(R.id.spinner);
 
-        String[] list = {"asmt", "gongabu", "ktm", "bagmati", "nep"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, list);
         spinner.setAdapter(adapter);
 
