@@ -28,8 +28,14 @@
             android:label="@string/spinner"
             android:parentActivityName=".DashboardActivity"/>
 
-        <activity android:name=".ListViewActivity"
+        <activity
+            android:name=".ListViewActivity"
             android:label="@string/listview"
+            android:parentActivityName=".DashboardActivity"/>
+
+        <activity
+            android:name=".RecyclerActivity"
+            android:label="@string/recyclerView"
             android:parentActivityName=".DashboardActivity"/>
     </application>
 

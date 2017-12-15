@@ -17,5 +17,6 @@
     <string name="listView">ListView</string>
     <string name="dashboard">Dashboard</string>
     <string name="listview">ListView</string>
+    <string name="recyclerView">Recycler View</string>
 
 </resources>

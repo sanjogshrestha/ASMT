@@ -31,4 +31,8 @@ public class DashboardActivity extends AppCompatActivity{
     public void startSpinnerActivity(View view) {
         startActivity(new Intent(this, SpinnerActivity.class));
     }
+
+    public void startRecyclerActivity(View view) {
+        startActivity(new Intent(this, RecyclerActivity.class));
+    }
 }
