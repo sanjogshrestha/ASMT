@@ -5,7 +5,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -36,11 +38,18 @@ public class CustomRecyclerAdapter extends RecyclerView.Adapter<CustomRecyclerAd
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        StudentModel studentModel = studentModelList.get(position);
+        final StudentModel studentModel = studentModelList.get(position);
         holder.nameTV.setText(studentModel.getName());
         holder.addressTV.setText(studentModel.getAddress());
-        holder.rollTV.setText(String.valueOf(studentModel.getRoll()));
         holder.phoneTV.setText(String.valueOf(studentModel.getPhone()));
+        holder.rollTV.setText(String.valueOf(studentModel.getRoll()));
+
+        holder.phoneTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, studentModel.getName(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
@@ -55,6 +64,7 @@ public class CustomRecyclerAdapter extends RecyclerView.Adapter<CustomRecyclerAd
 
     class ViewHolder extends RecyclerView.ViewHolder {
         TextView nameTV, addressTV, phoneTV, rollTV;
+        LinearLayout parentLayout;
 
         ViewHolder(View itemView) {
             super(itemView);
@@ -62,6 +72,7 @@ public class CustomRecyclerAdapter extends RecyclerView.Adapter<CustomRecyclerAd
             addressTV = itemView.findViewById(R.id.addressTV);
             phoneTV = itemView.findViewById(R.id.phoneNumTV);
             rollTV = itemView.findViewById(R.id.rollNumTV);
+            parentLayout = itemView.findViewById(R.id.parentLayout);
         }
     }
 }
