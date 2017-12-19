@@ -18,5 +18,8 @@
     <string name="dashboard">Dashboard</string>
     <string name="listview">ListView</string>
     <string name="recyclerView">Recycler View</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="Login">Login</string>
 
 </resources>

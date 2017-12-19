@@ -1,5 +1,6 @@
 package np.cnblabs.asmt;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        String email = getIntent().getStringExtra("email_address");
+
         nameET = findViewById(R.id.nameET);
         phoneET = findViewById(R.id.phoneET);
         emailET = findViewById(R.id.emailET);
@@ -47,7 +50,10 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                validateEmail(charSequence.toString());
+                validateEmail(charSequence.toString(),
+                        emailInputLayout,
+                        emailET,
+                        MainActivity.this);
             }
 
             @Override
@@ -79,14 +85,17 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    private boolean validateEmail(String email) {
+    public static boolean validateEmail(String email,
+                                        TextInputLayout emailInputLayout,
+                                        EditText emailET,
+                                        Context context) {
         if(email.isEmpty()){
-            emailInputLayout.setError(getString(R.string.this_field_is_required));
+            emailInputLayout.setError(context.getString(R.string.this_field_is_required));
             emailInputLayout.setErrorEnabled(true);
             emailET.requestFocus();
             return false;
         }else if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            emailInputLayout.setError(getString(R.string.invalid_email));
+            emailInputLayout.setError(context.getString(R.string.invalid_email));
             emailInputLayout.setErrorEnabled(true);
             emailET.requestFocus();
             return false;
