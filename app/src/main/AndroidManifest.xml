@@ -22,26 +22,31 @@
         <activity
             android:name=".DashboardActivity"
             android:label="@string/dashboard"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
 
         <activity
             android:name=".SpinnerActivity"
             android:label="@string/spinner"
-            android:parentActivityName=".DashboardActivity"/>
+            android:parentActivityName=".DashboardActivity" />
 
         <activity
             android:name=".ListViewActivity"
             android:label="@string/listview"
-            android:parentActivityName=".DashboardActivity"/>
+            android:parentActivityName=".DashboardActivity" />
 
         <activity
             android:name=".RecyclerActivity"
             android:label="@string/recyclerView"
-            android:parentActivityName=".DashboardActivity"/>
+            android:parentActivityName=".DashboardActivity" />
 
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"/>
+            android:label="@string/app_name" />
+
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

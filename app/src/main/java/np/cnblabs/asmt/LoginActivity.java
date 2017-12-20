@@ -34,7 +34,6 @@ public class LoginActivity extends AppCompatActivity {
 
         sharedPreferences = getSharedPreferences(PREFERENCES, MODE_PRIVATE);
 
-        String email = null;
         if(sharedPreferences.contains(IS_LOGGED_IN)){
             boolean isLoggedIn = sharedPreferences.getBoolean(IS_LOGGED_IN, false);
             if(isLoggedIn){
@@ -79,7 +78,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void startMainActivity(String email) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, HomeActivity.class);
         if(email != null) intent.putExtra("email_address", email);
         startActivity(intent);
         finish();

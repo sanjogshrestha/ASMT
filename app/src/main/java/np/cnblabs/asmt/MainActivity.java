@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         String email = getIntent().getStringExtra("email_address");
-
+        Toast.makeText(this, email, Toast.LENGTH_SHORT).show();
         nameET = findViewById(R.id.nameET);
         phoneET = findViewById(R.id.phoneET);
         emailET = findViewById(R.id.emailET);
