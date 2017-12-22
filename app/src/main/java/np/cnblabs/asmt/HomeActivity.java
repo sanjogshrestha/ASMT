@@ -11,7 +11,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawer_layout;
@@ -58,10 +57,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         switch (id){
-            case R.id.contact_us:
-                startActivity(new Intent(this, MainActivity.class));
-                break;
-
             case R.id.action_settings:
                 break;
         }
@@ -73,9 +68,22 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.nav_camera:
-                Toast.makeText(this, "Camera Clicked", Toast.LENGTH_SHORT).show();
+            case R.id.nav_list:
+                startActivity(new Intent(this, ListViewActivity.class));
                 break;
+
+            case R.id.nav_recyclerView:
+                startActivity(new Intent(this, RecyclerActivity.class));
+                break;
+
+            case R.id.nav_spinner:
+                startActivity(new Intent(this, SpinnerActivity.class));
+                break;
+
+            case R.id.nav_contact:
+                startActivity(new Intent(this, ContactActivity.class));
+                break;
+
         }
         if(drawer_layout.isDrawerOpen(Gravity.START)){
             drawer_layout.closeDrawer(Gravity.START);

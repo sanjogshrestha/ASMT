@@ -10,8 +10,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import static np.cnblabs.asmt.MainActivity.validateEmail;
-
 /**
  * Created by sanjogstha on 12/17/17.
  * Innovisto LLC
@@ -61,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
     public void validateUser(View view) {
         String email = emailET.getText().toString();
         String password = passwordET.getText().toString();
-        if(!validateEmail(email, emailInputLayout, emailET, this))
+        if(!ContactActivity.validateEmail(email, emailInputLayout, emailET, this))
             return;
         if(!validatePassword(password))
             return;

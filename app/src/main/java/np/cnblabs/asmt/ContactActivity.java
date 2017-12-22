@@ -1,7 +1,6 @@
 package np.cnblabs.asmt;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -15,7 +14,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class ContactActivity extends AppCompatActivity {
     EditText nameET, phoneET, emailET, messageET;
     String name, email, phone, message, gender;
     Button submitBtn;
@@ -53,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 validateEmail(charSequence.toString(),
                         emailInputLayout,
                         emailET,
-                        MainActivity.this);
+                        ContactActivity.this);
             }
 
             @Override
@@ -64,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean validateGender() {
         int selection = genderRadioGroup.getCheckedRadioButtonId();
         if(selection == -1) {
-            Toast.makeText(MainActivity.this, getString(R.string.please_select_gender), Toast.LENGTH_LONG).show();
+            Toast.makeText(ContactActivity.this, getString(R.string.please_select_gender), Toast.LENGTH_LONG).show();
             return false;
         }
 
@@ -140,13 +139,11 @@ public class MainActivity extends AppCompatActivity {
         phone = phoneET.getText().toString();
         message = messageET.getText().toString();
 
-       /* if(!validateName(name)) return;
-        if(!validateEmail(email)) return;
+        if(!validateName(name)) return;
+        if(!validateEmail(email, emailInputLayout, emailET, this)) return;
         if(!validatePhone(phone)) return;
         if(!validateGender()) return;
-        if(!validateMessage(message)) return;*/
-
-        startActivity(new Intent(MainActivity.this, DashboardActivity.class));
+        if(!validateMessage(message)) return;
 
         System.out.println("name="+ name + " email="+ email + " phone = " + phone + " message = " +  message + " gender = " + gender);
     }
