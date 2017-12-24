@@ -1,6 +1,5 @@
 package np.cnblabs.asmt;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +12,9 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import static np.cnblabs.asmt.Utils.validateEmail;
+import static np.cnblabs.asmt.Utils.validateName;
 
 public class ContactActivity extends AppCompatActivity {
     EditText nameET, phoneET, emailET, messageET;
@@ -72,38 +74,6 @@ public class ContactActivity extends AppCompatActivity {
         return true;
     }
 
-    private boolean validateName(String name) {
-        if(name.isEmpty()){
-            nameInputLayout.setError(getString(R.string.this_field_is_required));
-            nameInputLayout.setErrorEnabled(true);
-            nameET.requestFocus();
-            return false;
-        }
-        nameInputLayout.setError(null);
-        nameInputLayout.setErrorEnabled(false);
-        return true;
-    }
-
-    public static boolean validateEmail(String email,
-                                        TextInputLayout emailInputLayout,
-                                        EditText emailET,
-                                        Context context) {
-        if(email.isEmpty()){
-            emailInputLayout.setError(context.getString(R.string.this_field_is_required));
-            emailInputLayout.setErrorEnabled(true);
-            emailET.requestFocus();
-            return false;
-        }else if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            emailInputLayout.setError(context.getString(R.string.invalid_email));
-            emailInputLayout.setErrorEnabled(true);
-            emailET.requestFocus();
-            return false;
-        }
-        emailInputLayout.setError(null);
-        emailInputLayout.setErrorEnabled(false);
-        return true;
-    }
-
     private boolean validatePhone(String phone) {
         if(phone.isEmpty()){
             phoneInputLayout.setError(getString(R.string.this_field_is_required));
@@ -139,7 +109,7 @@ public class ContactActivity extends AppCompatActivity {
         phone = phoneET.getText().toString();
         message = messageET.getText().toString();
 
-        if(!validateName(name)) return;
+        if(!validateName(name, nameInputLayout, nameET, this)) return;
         if(!validateEmail(email, emailInputLayout, emailET, this)) return;
         if(!validatePhone(phone)) return;
         if(!validateGender()) return;

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/parentLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/padding5">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding5"
+        android:weightSum="100">
+
+        <TextView
+            android:id="@+id/nameTV"
+            android:layout_width="0dp"
+            android:layout_weight="50"
+            android:text="@string/name"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/font20"/>
+
+        <TextView
+            android:id="@+id/emailTV"
+            android:layout_width="0dp"
+            android:layout_weight="50"
+            android:text="@string/email"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:textStyle="italic"/>
+    </LinearLayout>
+</LinearLayout>

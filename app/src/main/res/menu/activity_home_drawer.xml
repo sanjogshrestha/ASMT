@@ -21,6 +21,11 @@
             android:id="@+id/nav_async"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/async_task" />
+
+        <item
+            android:id="@+id/nav_realm"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/realm" />
     </group>
 
     <item android:title="Communicate">
