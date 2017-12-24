@@ -16,6 +16,11 @@
             android:id="@+id/nav_spinner"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/spinner" />
+
+        <item
+            android:id="@+id/nav_async"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/async_task" />
     </group>
 
     <item android:title="Communicate">
