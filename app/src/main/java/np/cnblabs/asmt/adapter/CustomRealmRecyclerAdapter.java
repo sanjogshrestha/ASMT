@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.List;
@@ -21,6 +22,7 @@ import np.cnblabs.asmt.model.realmModel.RealmModelData;
 public class CustomRealmRecyclerAdapter extends RecyclerView.Adapter<CustomRealmRecyclerAdapter.ViewHolder> {
     private Context context;
     private List<RealmModelData> realmModelDataList;
+    setOnClickListener listener;
 
     public CustomRealmRecyclerAdapter(Context context, List<RealmModelData> studentModelList) {
         this.context = context;
@@ -39,6 +41,12 @@ public class CustomRealmRecyclerAdapter extends RecyclerView.Adapter<CustomRealm
         final RealmModelData studentModel = realmModelDataList.get(position);
         holder.nameTV.setText(studentModel.getName());
         holder.emailTV.setText(studentModel.getEmail());
+        holder.deleteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onClick(studentModel.getEmail());
+            }
+        });
     }
 
     @Override
@@ -53,11 +61,21 @@ public class CustomRealmRecyclerAdapter extends RecyclerView.Adapter<CustomRealm
 
     class ViewHolder extends RecyclerView.ViewHolder {
         TextView nameTV, emailTV;
+        Button deleteBtn;
 
         ViewHolder(View itemView) {
             super(itemView);
             nameTV = itemView.findViewById(R.id.nameTV);
             emailTV = itemView.findViewById(R.id.emailTV);
+            deleteBtn = itemView.findViewById(R.id.deleteBtn);
         }
+    }
+
+    public void setOnClick(setOnClickListener listener){
+        this.listener = listener;
+    }
+
+    public interface setOnClickListener{
+        void onClick(String email);
     }
 }

@@ -25,10 +25,18 @@
         <TextView
             android:id="@+id/emailTV"
             android:layout_width="0dp"
-            android:layout_weight="50"
+            android:layout_weight="40"
             android:text="@string/email"
             android:layout_height="wrap_content"
             android:gravity="end"
             android:textStyle="italic"/>
+
+        <Button
+            android:id="@+id/deleteBtn"
+            android:layout_width="0dp"
+            android:layout_weight="10"
+            android:layout_height="40dp"
+            android:background="@drawable/ic_delete"/>
+
     </LinearLayout>
 </LinearLayout>
