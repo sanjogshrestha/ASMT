@@ -26,6 +26,11 @@
             android:id="@+id/nav_realm"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/realm" />
+
+        <item
+            android:id="@+id/nav_viewPager"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/view_pager" />
     </group>
 
     <item android:title="Communicate">

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     package="np.cnblabs.asmt">
 
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -55,6 +56,10 @@
             android:name=".RealmActivity"
             android:label="@string/realm"
             android:parentActivityName=".HomeActivity"/>
+
+        <activity
+            android:name=".ViewPagerActivity"
+            android:parentActivityName=".HomeActivity" />
     </application>
 
 </manifest>

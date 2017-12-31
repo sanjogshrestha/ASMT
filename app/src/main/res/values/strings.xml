@@ -32,5 +32,6 @@
     <string name="name">Name</string>
     <string name="Add">Add</string>
     <string name="realm">Realm</string>
+    <string name="view_pager">View Pager</string>
 
 </resources>
