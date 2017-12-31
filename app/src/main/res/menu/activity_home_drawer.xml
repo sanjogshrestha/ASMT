@@ -31,6 +31,12 @@
             android:id="@+id/nav_viewPager"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/view_pager" />
+
+        <item
+            android:id="@+id/nav_retrofit"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/retrofit" />
+            />
     </group>
 
     <item android:title="Communicate">

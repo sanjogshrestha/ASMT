@@ -60,6 +60,11 @@
         <activity
             android:name=".ViewPagerActivity"
             android:parentActivityName=".HomeActivity" />
+
+        <activity
+            android:name=".RetrofitActivity"
+            android:label="@string/retrofit"
+            android:parentActivityName=".HomeActivity"/>
     </application>
 
 </manifest>

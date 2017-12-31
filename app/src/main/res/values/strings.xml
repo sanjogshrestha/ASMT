@@ -34,4 +34,8 @@
     <string name="realm">Realm</string>
     <string name="view_pager">View Pager</string>
 
+    <string name="no_internet_connection_detected">No internet connection detected</string>
+    <string name="exception_occurred">Some exception occurred in the server.</string>
+    <string name="retrofit">Retrofit</string>
+    <string name="loading">Loading Data</string>
 </resources>

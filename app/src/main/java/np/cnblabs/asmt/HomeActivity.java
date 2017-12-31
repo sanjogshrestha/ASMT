@@ -96,6 +96,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(new Intent(this, ViewPagerActivity.class));
                 break;
 
+            case R.id.nav_retrofit:
+                startActivity(new Intent(this, RetrofitActivity.class));
+                break;
+
         }
         if(drawer_layout.isDrawerOpen(Gravity.START)){
             drawer_layout.closeDrawer(Gravity.START);

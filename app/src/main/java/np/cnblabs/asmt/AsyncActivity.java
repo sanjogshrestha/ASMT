@@ -52,7 +52,7 @@ public class AsyncActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             progressDialog = new ProgressDialog(AsyncActivity.this);
-            progressDialog.setMessage("Loading Data");
+            progressDialog.setMessage(getString(R.string.loading));
             progressDialog.show();
             super.onPreExecute();
         }
