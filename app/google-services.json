@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "712571552335",
+    "firebase_url": "https://asmtdemo-8245a.firebaseio.com",
+    "project_id": "asmtdemo-8245a",
+    "storage_bucket": "asmtdemo-8245a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:712571552335:android:8c6bc1a14c36884d",
+        "android_client_info": {
+          "package_name": "np.cnblabs.asmt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "712571552335-4s3tnvf8nep3hsr6pnrtue1qp89k4jk0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPw0TjzHglD2DodYsTAe-5FenjnnckC4c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
