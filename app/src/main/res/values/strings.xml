@@ -38,4 +38,5 @@
     <string name="exception_occurred">Some exception occurred in the server.</string>
     <string name="retrofit">Retrofit</string>
     <string name="loading">Loading Data</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

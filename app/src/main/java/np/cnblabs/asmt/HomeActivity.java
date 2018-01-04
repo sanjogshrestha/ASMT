@@ -100,6 +100,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(new Intent(this, RetrofitActivity.class));
                 break;
 
+            case R.id.nav_map:
+                startActivity(new Intent(this, MapsActivity.class));
+                break;
+
         }
         if(drawer_layout.isDrawerOpen(Gravity.START)){
             drawer_layout.closeDrawer(Gravity.START);

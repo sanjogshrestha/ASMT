@@ -36,7 +36,11 @@
             android:id="@+id/nav_retrofit"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/retrofit" />
-            />
+
+        <item
+            android:id="@+id/nav_map"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/title_activity_maps"/>
     </group>
 
     <item android:title="Communicate">
