@@ -1,6 +1,8 @@
 package np.cnblabs.asmt;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -11,15 +13,30 @@ import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.ProgressBar;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawer_layout;
     NavigationView nav_view;
     Toolbar toolbar;
+
+    @BindView(R.id.webView)
+    WebView webView;
+
+    ProgressBar progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        ButterKnife.bind(this);
         drawer_layout = findViewById(R.id.drawer_layout);
         nav_view = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
@@ -31,6 +48,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
 
         nav_view.setNavigationItemSelectedListener(this);
+
+        webView.loadUrl("https://github.com/");
+        webView.setWebViewClient(new webViewClient());
+
+        progressBar = new ProgressBar(this);
     }
 
     @Override
@@ -109,5 +131,33 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             drawer_layout.closeDrawer(Gravity.START);
         }
         return true;
+    }
+
+    private class webViewClient extends WebViewClient {
+        @Override
+        public void onPageStarted(WebView view, String url, Bitmap favicon) {
+            progressBar.setVisibility(View.VISIBLE);
+            super.onPageStarted(view, url, favicon);
+        }
+
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            progressBar.setVisibility(View.GONE);
+            super.onPageFinished(view, url);
+        }
+
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            view.loadUrl(url);
+            return super.shouldOverrideUrlLoading(view, url);
+        }
+
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                view.loadUrl(request.getUrl().toString());
+            }
+            return super.shouldOverrideUrlLoading(view, request);
+        }
     }
 }
